@@ -1,0 +1,52 @@
+{
+  "name": "@harun-ticketing/common",
+  "version": "1.0.0",
+  "description": "Common module for ticketing app",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harun-ims/harun-ticketing-common"
+  },
+  "author": {
+    "name": "Md Harun Or Rashid",
+    "email": "harun.ru.cse@gmail.com",
+    "url": "https://harun-dev.vercel.app"
+  },
+  "keywords": [
+    "error",
+    "http",
+    "status",
+    "codes"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/lodash": "^4.17.14",
+    "@types/node": "^22.5.5",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.9.5",
+    "winston": "^3.17.0"
+  }
+}
