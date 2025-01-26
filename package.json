@@ -4,7 +4,6 @@
   "description": "Common module for ticketing app",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "module": "./dist/index.mjs",
   "files": [
     "dist"
   ],
