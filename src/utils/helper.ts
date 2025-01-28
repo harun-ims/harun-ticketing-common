@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { Pagination } from '../types/pagination';
 
 export const pick = _.pick;
 
@@ -20,7 +21,7 @@ interface IResults<T> {
 
 export const formatListResponse = <T>(results: IResults<T>) => {
   const { docs: data, ...paginationOption } = results;
-  const pagination = pick(paginationOption, [
+  const pagination: Pagination = pick(paginationOption, [
     'totalDocs',
     'limit',
     'hasPrevPage',
