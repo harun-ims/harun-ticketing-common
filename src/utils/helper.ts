@@ -2,31 +2,35 @@ import _ from 'lodash';
 
 export const pick = _.pick;
 
-interface IResults {
-  docs: any[];
+interface IResults<T> {
+  docs: T[];
   totalDocs: number;
   limit: number;
-  totalPages: number;
-  page?: number;
-  pagingCounter: number;
   hasPrevPage: boolean;
   hasNextPage: boolean;
-  prevPage?: number;
-  nextPage?: number;
+  page?: number | undefined;
+  totalPages: number;
+  offset: number;
+  prevPage?: number | null | undefined;
+  nextPage?: number | null | undefined;
+  pagingCounter: number;
+  meta?: any;
+  [customLabel: string]: T[] | number | boolean | null | undefined;
 }
 
-export const formatListResponse = (results: IResults) => {
+export const formatListResponse = <T>(results: IResults<T>) => {
   const { docs: data, ...paginationOption } = results;
   const pagination = pick(paginationOption, [
     'totalDocs',
     'limit',
-    'totalPages',
-    'page',
-    'pagingCounter',
     'hasPrevPage',
     'hasNextPage',
+    'page',
+    'totalPages',
+    'offset',
     'prevPage',
     'nextPage',
+    'pagingCounter',
   ]);
 
   return {
