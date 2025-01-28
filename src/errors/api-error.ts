@@ -69,6 +69,15 @@ export class UnauthorizedException extends ApiError {
   }
 }
 
+export class ForbiddenException extends ApiError {
+  constructor(message = 'Forbidden.') {
+    super(message, {
+      httpStatusCode: StatusCodes.FORBIDDEN,
+      httpReasonPhrase: ReasonPhrases.FORBIDDEN,
+    });
+  }
+}
+
 export class TooManyRequestsException extends ApiError {
   constructor(message = 'Too many requests.') {
     super(message, {
@@ -91,6 +100,69 @@ export class SessionExpiredException extends ApiError {
     super(message, {
       httpStatusCode: StatusCodes.FORBIDDEN,
       httpReasonPhrase: ReasonPhrases.FORBIDDEN,
+    });
+  }
+}
+
+export class InternalServerErrorException extends ApiError {
+  constructor(message = 'Internal Server Error.') {
+    super(message, {
+      httpStatusCode: StatusCodes.INTERNAL_SERVER_ERROR,
+      httpReasonPhrase: ReasonPhrases.INTERNAL_SERVER_ERROR,
+    });
+  }
+}
+
+export class ServiceUnavailableException extends ApiError {
+  constructor(message = 'Service Unavailable.') {
+    super(message, {
+      httpStatusCode: StatusCodes.SERVICE_UNAVAILABLE,
+      httpReasonPhrase: ReasonPhrases.SERVICE_UNAVAILABLE,
+    });
+  }
+}
+
+export class BadGatewayException extends ApiError {
+  constructor(message = 'Bad Gateway.') {
+    super(message, {
+      httpStatusCode: StatusCodes.BAD_GATEWAY,
+      httpReasonPhrase: ReasonPhrases.BAD_GATEWAY,
+    });
+  }
+}
+
+export class ConflictException extends ApiError {
+  constructor(message = 'Conflict.') {
+    super(message, {
+      httpStatusCode: StatusCodes.CONFLICT,
+      httpReasonPhrase: ReasonPhrases.CONFLICT,
+    });
+  }
+}
+
+export class NotImplementedException extends ApiError {
+  constructor(message = 'Not Implemented.') {
+    super(message, {
+      httpStatusCode: StatusCodes.NOT_IMPLEMENTED,
+      httpReasonPhrase: ReasonPhrases.NOT_IMPLEMENTED,
+    });
+  }
+}
+
+export class ServerUnavailableException extends ApiError {
+  constructor(message = 'Server Unavailable.') {
+    super(message, {
+      httpStatusCode: StatusCodes.SERVICE_UNAVAILABLE,
+      httpReasonPhrase: ReasonPhrases.SERVICE_UNAVAILABLE,
+    });
+  }
+}
+
+export class UnprocessableEntityException extends ApiError {
+  constructor(message = 'Unprocessable Entity.') {
+    super(message, {
+      httpStatusCode: StatusCodes.UNPROCESSABLE_ENTITY,
+      httpReasonPhrase: ReasonPhrases.UNPROCESSABLE_ENTITY,
     });
   }
 }
